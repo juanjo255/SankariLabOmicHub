@@ -4,6 +4,11 @@ This dataset contains two separate demonstration archives for the `miniodp`
 framework. They serve different purposes and are intended to be downloaded
 independently.
 
+ScienceDB record:
+
+- DOI: `10.57760/sciencedb.41502`
+- landing page: `https://doi.org/10.57760/sciencedb.41502`
+
 ## Files
 
 ### 1. `portal_demo.tar.gz`
@@ -46,5 +51,4 @@ SHA-256:
 - The two archives are intentionally distributed separately so users can
   download only the part they need.
 - The corresponding source code and detailed documentation are available in the
-  public repository: `https://github.com/qtulab/miniodp`
-
+  public repository: `https://github.com/QTuLab/miniodp`

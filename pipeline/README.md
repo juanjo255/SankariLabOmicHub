@@ -83,7 +83,8 @@ See the separate demo package documentation for the expected contents of `pipeli
 
 Current demo download:
 
-- `https://tulab.genetics.ac.cn/~qtu/miniodp/pipeline_demo.tar.gz`
+- ScienceDB record: [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502)
+- file: `pipeline_demo.tar.gz`
 - SHA256: `de8db26fe01f6df91c27d14665438397a48f4ff4b2872b69977649e8c66488e6`
 
 ## Workflow order
@@ -259,11 +260,18 @@ Typical inputs:
 
 To validate the current repository with the separate pipeline demo package:
 
-1. Unpack the demo so that its `data/` directory becomes `pipeline/data/`.
-2. Build the image from `pipeline/Dockerfile`, or pull `qtulab/miniodp-pipeline:latest` if you only need the published runtime.
-3. Start the container with `docker compose run --rm pipeline bash`.
-4. Inside the container, run `cd /work/pipeline`.
-5. Run the scripts in workflow order from `/work/pipeline`.
+1. Download `pipeline_demo.tar.gz` from the ScienceDB record [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502).
+2. Verify the archive checksum:
+
+```bash
+echo "de8db26fe01f6df91c27d14665438397a48f4ff4b2872b69977649e8c66488e6  pipeline_demo.tar.gz" | sha256sum -c -
+```
+
+3. Unpack the demo so that its `data/` directory becomes `pipeline/data/`.
+4. Build the image from `pipeline/Dockerfile`, or pull `qtulab/miniodp-pipeline:latest` if you only need the published runtime.
+5. Start the container with `docker compose run --rm pipeline bash`.
+6. Inside the container, run `cd /work/pipeline`.
+7. Run the scripts in workflow order from `/work/pipeline`.
 
 ## BulkMulti conversion notes
 

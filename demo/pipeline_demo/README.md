@@ -20,13 +20,9 @@ The demo package is organized around zebrafish chromosome 1 and covers:
 ## Download
 
 - file: `pipeline_demo.tar.gz`
-- url: `https://tulab.genetics.ac.cn/~qtu/miniodp/pipeline_demo.tar.gz`
+- ScienceDB record: `https://doi.org/10.57760/sciencedb.41502`
 - size: `8.4G`
 - SHA256: `de8db26fe01f6df91c27d14665438397a48f4ff4b2872b69977649e8c66488e6`
-
-The checksum list is published at:
-
-- `https://tulab.genetics.ac.cn/~qtu/miniodp/SHA256SUMS.txt`
 
 ## Layout
 
@@ -111,11 +107,18 @@ Core sample groups used in the compact demo:
 
 To validate the current repository with this package:
 
-1. Unpack the package so that `pipeline_demo/data/` becomes `pipeline/data/`.
-2. Build the runtime image from `pipeline/Dockerfile`.
-3. Start the runtime shell with `cd pipeline && docker compose run --rm pipeline bash`.
-4. Inside the container, run `cd /work/pipeline`.
-5. Run the scripts in the order documented in [pipeline/README.md](../../pipeline/README.md).
+1. Download `pipeline_demo.tar.gz` from the ScienceDB record [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502).
+2. Verify the archive checksum:
+
+```bash
+echo "de8db26fe01f6df91c27d14665438397a48f4ff4b2872b69977649e8c66488e6  pipeline_demo.tar.gz" | sha256sum -c -
+```
+
+3. Unpack the package so that `pipeline_demo/data/` becomes `pipeline/data/`.
+4. Build the runtime image from `pipeline/Dockerfile`.
+5. Start the runtime shell with `cd pipeline && docker compose run --rm pipeline bash`.
+6. Inside the container, run `cd /work/pipeline`.
+7. Run the scripts in the order documented in [pipeline/README.md](../../pipeline/README.md).
 
 ## Compatibility notes
 

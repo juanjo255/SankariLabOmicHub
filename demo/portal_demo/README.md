@@ -18,13 +18,9 @@ This demo package contains:
 ## Download
 
 - file: `portal_demo.tar.gz`
-- url: `https://tulab.genetics.ac.cn/~qtu/miniodp/portal_demo.tar.gz`
+- ScienceDB record: `https://doi.org/10.57760/sciencedb.41502`
 - size: `1.7G`
 - SHA256: `85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c`
-
-The checksum list is published at:
-
-- `https://tulab.genetics.ac.cn/~qtu/miniodp/SHA256SUMS.txt`
 
 ## Layout
 
@@ -82,11 +78,13 @@ To test against the current repository:
 1. Download and verify the package from the repository root:
 
 ```bash
-curl -L -o portal_demo.tar.gz https://tulab.genetics.ac.cn/~qtu/miniodp/portal_demo.tar.gz
-curl -L -o SHA256SUMS.txt https://tulab.genetics.ac.cn/~qtu/miniodp/SHA256SUMS.txt
-sha256sum -c SHA256SUMS.txt --ignore-missing
+echo "85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c  portal_demo.tar.gz" | sha256sum -c -
 tar -xzf portal_demo.tar.gz -C demo
 ```
+
+Download `portal_demo.tar.gz` from the ScienceDB record before running the commands above:
+
+- [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502)
 
 2. For a local Dash test without copying data into the repository:
 

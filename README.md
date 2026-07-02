@@ -42,7 +42,7 @@ Choose the path that matches what you want to test first.
 Use this path to test the web portal components with a compact zebrafish example.
 
 1. Read [demo/portal_demo/README.md](demo/portal_demo/README.md).
-2. Download the portal demo package after the ScienceDB record is released.
+2. Download `portal_demo.tar.gz` from the ScienceDB record: [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502).
 3. Follow [docs/PORTAL_GUIDE.md](docs/PORTAL_GUIDE.md) to connect Hugo, Dash, JBrowse 2, and SequenceServer.
 
 The portal demo validates data discovery, Dash gene views, single-cell modules, JBrowse 2 loading, and SequenceServer startup. It is a test package, not a full production deployment.
@@ -52,7 +52,7 @@ The portal demo validates data discovery, Dash gene views, single-cell modules, 
 Use this path to test the analysis workflow and container runtime.
 
 1. Read [demo/pipeline_demo/README.md](demo/pipeline_demo/README.md).
-2. Download the pipeline demo package after the ScienceDB record is released.
+2. Download `pipeline_demo.tar.gz` from the ScienceDB record: [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502).
 3. Start the runtime:
 
 ```bash
@@ -162,7 +162,7 @@ hugo --minify --config config/hugo_default.toml --baseURL https://example.org/mi
 
 ### Demo Packages
 
-The demo data are distributed outside this repository. The ScienceDB submission is currently under review. DOI and final download links will be added after release.
+The demo data are distributed outside this repository through the ScienceDB record [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502). Download `portal_demo.tar.gz` and `pipeline_demo.tar.gz` from that record as needed.
 
 `portal_demo.tar.gz` (`1.7G`) validates the web portal side with a compact zebrafish subset. It includes example runtime data for Hugo, Dash, JBrowse 2, and SequenceServer. See [demo/portal_demo/README.md](demo/portal_demo/README.md).
 

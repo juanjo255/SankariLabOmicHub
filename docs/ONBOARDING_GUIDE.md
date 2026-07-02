@@ -34,11 +34,13 @@ build those runtime datasets.
 Before adding your own species, test the public demo package.
 
 ```bash
-curl -L -o portal_demo.tar.gz https://tulab.genetics.ac.cn/~qtu/miniodp/portal_demo.tar.gz
-curl -L -o SHA256SUMS.txt https://tulab.genetics.ac.cn/~qtu/miniodp/SHA256SUMS.txt
-sha256sum -c SHA256SUMS.txt --ignore-missing
+echo "85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c  portal_demo.tar.gz" | sha256sum -c -
 tar -xzf portal_demo.tar.gz -C demo
 ```
+
+Download `portal_demo.tar.gz` from the ScienceDB record before running the commands above:
+
+- [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502)
 
 Then follow the component-specific notes in:
 

@@ -115,7 +115,8 @@ The portal demo is distributed separately from the repository and is intended to
 
 Current download:
 
-- `https://tulab.genetics.ac.cn/~qtu/miniodp/portal_demo.tar.gz`
+- ScienceDB record: [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502)
+- file: `portal_demo.tar.gz`
 - SHA256: `85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c`
 
 Its documented layout is:
