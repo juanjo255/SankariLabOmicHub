@@ -13,6 +13,13 @@ Cattle (*Bos taurus*) is an important large animal model for agricultural genomi
 - **Agricultural Genomics**: Complex trait analysis, livestock genetics
 - **Comparative Genomics**: Mammalian functional annotation, cross-species analysis
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | ARS-UCD1.3 |
+| Gene annotation | Ensembl 111 |
+
 ## Data Sources
 
 ##### Bulk data

@@ -13,6 +13,13 @@ Mexican Tetra (*Astyanax mexicanus*) is a remarkable model organism for evolutio
 - **Metabolic Adaptation**: Energy metabolism, nutrient sensing pathways
 - **Comparative Genomics**: Cis-regulatory changes underlying adaptive evolution
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | Astyanax_mexicanus-2.0 |
+| Gene annotation | Ensembl 111 |
+
 ## Data Sources
 
 ##### Bulk data

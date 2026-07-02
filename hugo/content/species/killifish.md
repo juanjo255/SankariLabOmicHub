@@ -17,6 +17,13 @@ The current data release combines baseline bulk transcriptomes with curated sing
 - **Single-cell tissue atlas and sex dimorphism**: cell-type-resolved profiles from blood, kidney, liver, spleen, and brain support analysis of immune, metabolic, neural, and sex-biased programs.
 - **Comparative genomics and life-history evolution**: a compact vertebrate model for linking genome evolution, sex chromosome biology, and rapid aging.
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | GCF_043380555.1 (NfurGRZ-RIMD1) |
+| Gene annotation | NCBI RefSeq RS_2024_12 |
+
 ## Data Sources
 
 ##### Single cell data

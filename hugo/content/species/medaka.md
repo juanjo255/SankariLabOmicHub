@@ -17,6 +17,14 @@ Medaka (*Oryzias latipes*) is a key model organism for evolutionary developmenta
 - **Stem Cell Biology**: Tissue-specific stem cell populations, homeostatic functions
 - **Epigenetic Reprogramming**: DNA methylation dynamics, primordial germ cell development, chromatin remodeling
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | Ensembl 94 Plus |
+| Gene annotation | IGDB v2 |
+| Notes | IGDB v2 is the portal annotation standard for medaka. It extends the Ensembl 94 reference with locally curated gene models. |
+
 ## Data Sources
 
 ##### Single cell data

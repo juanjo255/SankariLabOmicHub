@@ -17,6 +17,13 @@ Zebrafish (*Danio rerio*) is a premier model organism for developmental biology,
 - **Epigenetics**: DNA methylation, histone modifications, chromatin accessibility, 3D genome organization
 - **Single-cell Analysis**: Cell-type identification, developmental trajectories, lineage tracing, cell state transitions
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | GRCz11 |
+| Gene annotation | Ensembl 100 |
+
 ## Data Sources
 
 ##### Single cell data

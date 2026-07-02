@@ -13,6 +13,13 @@ Hydra (*Hydra vulgaris*) is a unique cnidarian model organism renowned for its e
 - **Developmental Biology**: Body axis formation, cell fate determination
 - **Comparative Genomics**: Gene expression regulation during regeneration
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | Hydra_vulgaris_105_v3 |
+| Gene annotation | release 58 |
+
 ## Data Sources
 
 ##### Bulk data

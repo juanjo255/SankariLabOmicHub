@@ -13,6 +13,13 @@ Lancelet (*Branchiostoma lanceolatum*) is a crucial invertebrate chordate model 
 - **Developmental Biology**: Basic developmental processes, body plan evolution
 - **Comparative Genomics**: Vertebrate gene regulation origins, functional genomics
 
+## Reference Genome and Annotation
+
+| Item | Value |
+| ---- | ----- |
+| Genome assembly | BraLan2 |
+| Gene annotation | release 58 |
+
 ## Data Sources
 
 ##### Bulk data
