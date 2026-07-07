@@ -1,6 +1,6 @@
 # Mini Omics Data Portal (miniODP)
 
-miniODP is an open-source framework for building lightweight multi-omics portals for understudied and community-scale model organisms. It provides a reusable **analysis pipeline**, a configurable **web portal**, species-level configuration files, gene-ID adapters, data-conversion scripts, Docker runtime files, and deployment documentation.
+miniODP is an open-source framework for building reusable multi-omics resources in understudied organisms. It includes an **analysis pipeline**, a configurable **web portal**, species-level configuration files, gene-ID adapters, data-conversion scripts, Docker runtime files, demo-package documentation, and deployment documentation.
 
 The public miniODP instance maintained by QTu Lab is available at [https://tulab.genetics.ac.cn/miniodp/](https://tulab.genetics.ac.cn/miniodp/).
 
@@ -14,15 +14,17 @@ The public miniODP instance maintained by QTu Lab is available at [https://tulab
 
 ## Introduction
 
-Large, well-established model-organism communities often have mature genome resources, curated annotations, and specialized data portals. Smaller or emerging model-organism communities usually need a more practical route. They may have a reference genome and scattered public datasets, but still need a way to **curate data**, **adapt gene identifiers**, **build genome tracks**, **connect gene and locus views**, and **deploy a maintainable website**.
+Large, well-established model-organism communities often have mature genome resources, curated annotations, and specialized data portals. Smaller or emerging model-organism communities usually need a more practical route. They may have a reference genome and scattered public datasets, but the difficult part is often turning these materials into a maintained site where genes, loci, tracks, expression matrices, and sequence searches are connected.
 
-miniODP addresses this need as a reusable framework rather than a fixed database for one species. A project can start with a genome reference, gene annotations, and bulk RNA-seq data, then add **genome-browser tracks**, **BLAST databases**, **single-cell modules**, and regulatory outputs such as **enhancer-like signatures** and **gene regulatory networks** when suitable data are available. The same codebase can support species with complete matched assays and species with only partial data.
+miniODP addresses this need as a reusable framework rather than a fixed database for one species. A project can start with a genome reference, gene annotations, and bulk RNA-seq data, then add **genome-browser tracks**, **BLAST databases**, **single-cell modules**, and regulatory outputs such as **enhancer-like signatures** and **gene regulatory networks** when suitable data are available. The current public instance includes zebrafish, medaka, turquoise killifish, Mexican tetra, Hydra, lancelet, and cattle. The same codebase can support species with complete matched assays and species with only partial data.
+
+> The central idea is that an omics resource for understudied organisms does not need to start as a complete atlas. It can begin by waking dormant data in the public archives and turning them into a usable infrastructure that grows with the data, the technology, and the community.
 
 <p align="center">
-  <img src="common/images/overview_miniodp.png" alt="miniODP framework overview" width="600">
+  <img src="common/images/graphical_abstract.png" alt="miniODP framework overview" width="850">
 </p>
 
-miniODP is paired with the miniENCODE core assay design. miniENCODE uses **RNA-seq**, **ATAC-seq**, and **H3K27ac profiling** as a practical starting set for regulatory analysis when resources are limited. RNA-seq measures gene expression, ATAC-seq maps accessible chromatin, and H3K27ac marks active regulatory regions. Together, these three layers support **enhancer-like signature calling**, **enhancer-gene linkage**, and **gene regulatory network inference** when matched samples are available. Optional assays such as long-read RNA-seq, Micro-C, and single-cell assays can be added when the biological question requires higher resolution.
+miniODP is paired with the miniENCODE core assay design, which uses **RNA-seq**, **ATAC-seq**, and **H3K27ac profiling** as a practical starting point for regulatory analysis when resources are limited. RNA-seq measures gene expression, ATAC-seq maps accessible chromatin, and H3K27ac marks active regulatory regions. Together, these three layers support **enhancer-like signature calling**, **enhancer-gene linkage**, and **gene regulatory network inference** when matched samples are available. miniENCODE is not intended as an ENCODE-equivalent replacement; optional assays such as long-read RNA-seq, Micro-C, and single-cell assays can be added when needed.
 
 <p align="center">
   <img src="common/images/overview_miniencode.png" alt="miniENCODE core assay design" width="600">
@@ -198,11 +200,11 @@ Start with [docs/ONBOARDING_GUIDE.md](docs/ONBOARDING_GUIDE.md) for the full spe
 
 ## Citation and License
 
-A manuscript describing miniODP is in preparation. The formal citation will be added after publication.
+Please cite the preprint:
 
-For now, please cite the repository and the release version you used:
+Yang H, Wang Z, Shan Z, Shang H, Jiang P, Li Y, Tu Q. miniODP: a reusable framework for building multi-omics resources in understudied organisms. bioRxiv. doi: [10.1101/2024.01.06.573815](https://doi.org/10.1101/2024.01.06.573815).
 
-QTu Lab. miniODP: a reusable framework for building multi-omics resources in understudied organisms. GitHub repository, `https://github.com/QTuLab/miniodp`.
+The formal journal citation will be added after publication.
 
 This repository supersedes the legacy public miniENCODE repository as the main open-source home for the framework. The legacy repository remains available at [https://github.com/QTuLab/miniENCODE/](https://github.com/QTuLab/miniENCODE/).
 
