@@ -198,6 +198,10 @@ Start with [docs/ONBOARDING_GUIDE.md](docs/ONBOARDING_GUIDE.md) for the full spe
 - [sequenceserver/README.md](sequenceserver/README.md): BLAST database management and JBrowse linking
 - [demo/README.md](demo/README.md): overview of the external demo packages
 
+## Collaborations
+
+We welcome collaborations with organism-specific communities interested in deploying miniODP on their own servers or hosting curated multi-omics datasets through our platform. Please contact us to discuss potential collaborations.
+
 ## Citation and License
 
 Please cite the preprint:
