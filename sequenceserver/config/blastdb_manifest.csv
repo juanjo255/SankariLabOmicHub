@@ -21,3 +21,6 @@ zebrafish,protein,Danio_rerio.GRCz11.pep.all.fa,"Zebrafish Proteome, Ensembl 115
 killifish,genome,Nothobranchius_furzeri.NfurGRZ-RIMD1.genome.fa,"Turquoise killifish Genome, NfurGRZ-RIMD1",105023,nucl,,,true
 killifish,cdna,Nothobranchius_furzeri.NfurGRZ-RIMD1.cdna.all.fa,"Turquoise killifish cDNA, RefSeq RS_2024_12 (NfurGRZ-RIMD1)",105023,nucl,,,true
 killifish,protein,Nothobranchius_furzeri.NfurGRZ-RIMD1.protein.fa,"Turquoise killifish Proteome, RefSeq RS_2024_12 (NfurGRZ-RIMD1)",105023,prot,,,true
+smeliloti,genome,Sinorhizobium_meliloti_B02.genome.fa,"Sinorhizobium meliloti B02 Genome (Flye assembly)",382,nucl,,,true
+smeliloti,cdna,Sinorhizobium_meliloti_B02.cds.fa,"Sinorhizobium meliloti B02 CDS (Bakta)",382,nucl,,,true
+smeliloti,protein,Sinorhizobium_meliloti_B02.protein.fa,"Sinorhizobium meliloti B02 Proteome (Bakta)",382,prot,,,true

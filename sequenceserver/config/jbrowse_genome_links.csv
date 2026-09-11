@@ -6,3 +6,4 @@ medaka,medaka_ens94plus.fa,"Medaka Genome, Ensembl 94",Oryzias_latipes,"Ol_Ensem
 mexican_tetra,Astyanax_mexicanus-2.0.dna_rm.toplevel.fa,"Mexican tetra Genome, 2.0",Astyanax_mexicanus,Am_Ensembl.gff3,"Astyanax_mexicanus-2.0-,Astyanax_mexicanus-",true
 zebrafish,Danio_rerio.GRCz11.dna_rm.primary_assembly.fa,"Zebrafish Genome, GRCz11",Danio_rerio,Dr_Ensembl100.gff3,Danio_rerio-,true
 killifish,Nothobranchius_furzeri.NfurGRZ-RIMD1.genome.fa,"Turquoise killifish Genome, NfurGRZ-RIMD1",Nothobranchius_furzeri,Nf_RefSeq.gff3,Nothobranchius_furzeri-,true
+smeliloti,Sinorhizobium_meliloti_B02.genome.fa,"Sinorhizobium meliloti B02 Genome (Flye assembly)",Sinorhizobium_meliloti,B02_bakta.gff3,,true
