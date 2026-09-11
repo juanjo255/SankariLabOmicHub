@@ -8,9 +8,7 @@ scientific_name = "Sinorhizobium meliloti "
 image = "smeliloti.png"
 description = "A nitrogen-fixing symbiont from the genus Medicago, Melilotus and Trigonella. "
 jbrowse_url = "/miniodp/jbrowse2/?assembly=Sinorhizobium_meliloti&loc=contig_3_B02:1..50000&tracks=B02_bakta.gff3"
-# LOCAL DEV ONLY - absolute URL to the standalone Dash server. Revert to
-# "/miniodp/dash/smeliloti" before deploying (prod routes it via nginx).
-dash_url = "http://localhost:3939/miniodp/dash/smeliloti"
+dash_url = "/miniodp/dash/smeliloti"
 blast_url = "/miniodp/sequenceserver/"
 order = 99
 bulk_datasets = 10
