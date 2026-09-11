@@ -1,6 +1,6 @@
 {{/* Theme Loader Partial - Dynamically loads theme CSS based on config */}}
 {{- $theme := .Site.Params.theme | default "classic-blue" -}}
-{{- $availableThemes := slice "classic-blue" "emerald-science" "royal-purple" "warm-orange" "cool-gray" "elegant-blue" -}}
+{{- $availableThemes := slice "classic-blue" "classic-green" "emerald-science" "royal-purple" "warm-orange" "cool-gray" "elegant-blue" -}}
 
 {{/* Validate theme exists, fallback to classic-blue */}}
 {{- if not (in $availableThemes $theme) -}}

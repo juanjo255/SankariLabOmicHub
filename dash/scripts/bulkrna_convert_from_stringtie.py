@@ -58,6 +58,7 @@ class BulkRNAConverter:
         species: str,
         min_tpm: float = 0.0,
         validate_genes: bool = False,
+        gene_id_passthrough: bool = False,
     ):
         self.input_dir = Path(input_dir)
         self.metadata_file = Path(metadata_file)
@@ -65,6 +66,7 @@ class BulkRNAConverter:
         self.species = species
         self.min_tpm = min_tpm
         self.validate_genes = validate_genes
+        self.gene_id_passthrough = gene_id_passthrough
         self.adapter = create_species_adapter(species)
 
         # Output files
@@ -168,6 +170,12 @@ class BulkRNAConverter:
         gene_id = str(gene_id).strip()
         if not gene_id:
             return None
+
+        # Local / non-Ensembl annotations (e.g. Bakta/NBIS "nbis-gene-*" locus
+        # tags) already carry the common gene ID in the StringTie "Gene ID"
+        # column, so use it verbatim instead of pattern-matching an ENS token.
+        if self.gene_id_passthrough:
+            return gene_id
 
         if isinstance(self.adapter, MedakaAdapter):
             if gene_id.startswith("gene:"):
@@ -665,6 +673,15 @@ Examples:
         help='Validate gene IDs against geneinfo.db'
     )
     parser.add_argument(
+        '--gene-id-passthrough',
+        action='store_true',
+        help=(
+            'Use the StringTie "Gene ID" column verbatim as the common gene ID. '
+            'Use for local/non-Ensembl annotations (e.g. Bakta/NBIS "nbis-gene-*" '
+            'locus tags) whose IDs already match ENS_INFO.ENS in geneinfo.db.'
+        )
+    )
+    parser.add_argument(
         '--dry-run',
         action='store_true',
         help='Run validation and processing but do not write output files'
@@ -680,6 +697,7 @@ Examples:
         species=args.species,
         min_tpm=args.min_tpm,
         validate_genes=args.validate_genes,
+        gene_id_passthrough=args.gene_id_passthrough,
     )
 
     # Run conversion

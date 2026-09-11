@@ -2,6 +2,23 @@
 # All dash_url entries point to the unified dashboard served via Nginx:
 # use relative paths like /miniodp/dash/{species_key} for environment portability.
 
+[smeliloti]
+name = "Sinorhizobium meliloti "
+scientific_name = "Sinorhizobium meliloti "
+image = "smeliloti.png"
+description = "A nitrogen-fixing symbiont from the genus Medicago, Melilotus and Trigonella. "
+jbrowse_url = "/miniodp/jbrowse2/?assembly=Sinorhizobium_meliloti&loc=contig_3_B02:1..50000&tracks=B02_bakta.gff3"
+# LOCAL DEV ONLY - absolute URL to the standalone Dash server. Revert to
+# "/miniodp/dash/smeliloti" before deploying (prod routes it via nginx).
+dash_url = "http://localhost:3939/miniodp/dash/smeliloti"
+blast_url = "/miniodp/sequenceserver/"
+order = 99
+bulk_datasets = 10
+bulk_bases = 9999999999
+single_cell_datasets = 2
+cells = 10000
+
+
 [zebrafish]
 name = "Zebrafish"
 scientific_name = "Danio rerio"
@@ -31,79 +48,3 @@ reads = 16392274534
 bulk_bases = 2819735515044
 single_cell_datasets = 4
 cells = 62659
-
-[killifish]
-name = "Turquoise killifish"
-scientific_name = "Nothobranchius furzeri"
-image = "killifish.png"
-description = "A short-lived annual killifish widely used to study vertebrate aging, diapause, tissue homeostasis, and life-history evolution."
-jbrowse_url = "/miniodp/jbrowse2/?assembly=Nothobranchius_furzeri&loc=NC_091749.1:26585592..26598806&tracks=Nf_RefSeq.gff3,RNA_Tissue_EmbryoDiapause_day6_2020_Science_Brunet,ATAC_Tissue_EmbryoDiapause_day6_2024_Cell_Brunet_ATAC,ChIP_Tissue_EmbryoDiapause_h3k27me3_2020_Science_Brunet_ChIP"
-dash_url = "/miniodp/dash/killifish"
-blast_url = "/miniodp/sequenceserver/"
-order = 3
-# bulk_datasets and reads follow the current public killifish run/spots summary.
-bulk_datasets = 1348
-reads = 40031443203
-bulk_bases = 7413699641375
-single_cell_datasets = 31
-cells = 386393
-
-[mexican_tetra]
-name = "Mexican Tetra"
-scientific_name = "Astyanax mexicanus"
-image = "astyanax.jpg"
-description = "A freshwater fish with both surface and cave-dwelling populations, used to study evolution and adaptation."
-jbrowse_url = "/miniodp/jbrowse2/?assembly=Astyanax_mexicanus&loc=2:6378023..6399742&tracks=Am_Ensembl.gff3,RNA_Tissue_Liver_Surface_2022NG.bam,ATAC_Tissue_Liver_Surface_2022NG.final.bam,ChIP_Tissue_Liver_Surface_H3K27ac_2022NG.final.bam"
-dash_url = "/miniodp/dash/mexican_tetra"
-blast_url = "/miniodp/sequenceserver/"
-order = 4
-bulk_datasets = 49
-reads = 1355653194
-bulk_bases = 100580674909
-single_cell_datasets = 0
-cells = 0
-
-[hydra]
-name = "Hydra"
-scientific_name = "Hydra vulgaris"
-image = "hydra.jpg"
-description = "A small cnidarian known for its remarkable regenerative abilities and immortal characteristics."
-jbrowse_url = "/miniodp/jbrowse2/?assembly=Hydra_vulgaris&loc=CM039212.1:33437956..33530249&tracks=Hv_Ensembl.gff3,RNA_Tissue_Head_Reg6hr_2021GBE.bam,ATAC_Tissue_Head_Reg6hr_2021GBE.final.bam,ChIP_Tissue_Head_Reg6hr_H3K27ac_2021GBE.final.bam"
-dash_url = "/miniodp/dash/hydra"
-blast_url = "/miniodp/sequenceserver/"
-order = 5
-bulk_datasets = 101
-reads = 3032813725
-bulk_bases = 257147250452
-single_cell_datasets = 0
-cells = 0
-
-[lancelet]
-name = "Lancelet"
-scientific_name = "Branchiostoma lanceolatum"
-image = "branchiostoma.jpg"
-description = "A primitive chordate that provides insights into vertebrate evolution and development."
-jbrowse_url = "/miniodp/jbrowse2/?assembly=Branchiostoma_lanceolatum&loc=Sc0000004:3768833..3777852&tracks=Bl_Ensembl.gff3,RNA_Embryo_15h_2018Nat.bam,ATAC_Embryo_15h_2018Nat.final.bam,ChIP_Embryo_15h_H3K27ac_2018Nat.final.bam"
-dash_url = "/miniodp/dash/lancelet"
-blast_url = "/miniodp/sequenceserver/"
-order = 6
-bulk_datasets = 80
-reads = 5471563949
-bulk_bases = 996950444617
-single_cell_datasets = 0
-cells = 0
-
-[cattle]
-name = "Cattle"
-scientific_name = "Bos taurus"
-image = "bos.jpg"
-description = "A large domesticated mammal, important for agricultural research and comparative genomics."
-jbrowse_url = "/miniodp/jbrowse2/?assembly=Bos_taurus&loc=3:28552504..28569540&tracks=Bt_Ensembl.gff3,RNA_Tissue_SkeletalMuscle_2021NC.bam,ATAC_Tissue_SkeletalMuscle_2021NC.final.bam,ChIP_Tissue_SkeletalMuscle_H3K27ac_2021NC.final.bam"
-dash_url = "/miniodp/dash/cattle"
-blast_url = "/miniodp/sequenceserver/"
-order = 7
-bulk_datasets = 122
-reads = 10559657586
-single_cell_datasets = 0
-cells = 0
-bulk_bases = 1071606480115

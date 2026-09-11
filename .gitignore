@@ -1,0 +1,89 @@
+# =============================================================================
+# miniODP / SankariLabOmicHub .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Converted / runtime data (privacy: unpublished genome & annotation; size)
+# Each app's README documents these as "populated externally", never committed.
+# -----------------------------------------------------------------------------
+# Dash: converted per-species databases (geneinfo.db, bulkRNA/scRNA/scATAC
+# parquet, BulkMulti) - keep species_adapters.toml, the one config file here.
+dash/data/*
+!dash/data/species_adapters.toml
+dash/logs/
+dash/cache/
+
+# JBrowse 2: the downloaded web app + per-species reference/track bundles
+# (FASTA, GFF3.gz, BigWig, trix index) - all generated/fetched, not source.
+jbrowse2/app/
+
+# SequenceServer: BLAST-ready FASTA/db files.
+sequenceserver/data/
+
+# Pipeline: any local scratch/output a run drops next to the scripts.
+pipeline/data/
+pipeline/output/
+pipeline/work/
+
+# -----------------------------------------------------------------------------
+# Hugo build output (generated, regenerate with `hugo`)
+# -----------------------------------------------------------------------------
+hugo/public/
+public/
+.hugo_build.lock
+hugo/.hugo_build.lock
+
+# -----------------------------------------------------------------------------
+# Demo packages (large, downloaded from ScienceDB per docs/ONBOARDING_GUIDE.md
+# - not meant to live in git; re-download via the documented DOI instead)
+# -----------------------------------------------------------------------------
+*.tar.gz
+*.download.log
+demo/portal_demo/dash/
+demo/portal_demo/hugo/
+demo/portal_demo/jbrowse2/
+demo/portal_demo/sequenceserver/
+demo/pipeline_demo/data/
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# -----------------------------------------------------------------------------
+# Node / JBrowse CLI (only relevant if a package.json ever lands here)
+# -----------------------------------------------------------------------------
+node_modules/
+
+# -----------------------------------------------------------------------------
+# Secrets & credentials - never commit these
+# -----------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_ed25519
+**/secrets/
+**/*credentials*
+**/*.credentials
+
+# -----------------------------------------------------------------------------
+# Logs, backups, editor/OS cruft
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+.idea/
+.vscode/

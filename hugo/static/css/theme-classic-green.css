@@ -1,0 +1,167 @@
+/* Classic Green Theme - Botanical / Plant Research
+ *
+ * A calm foliage-green palette meant to sit comfortably behind long reading
+ * sessions. Neutral slate-greens for secondary text keep it professional.
+ *
+ * Variables are declared on both `:root` and `:root[data-theme="classic-green"]`
+ * so this theme still wins the cascade over `custom.css`, which is loaded
+ * afterwards and re-pins a few `:root` colours to blue.
+ #14735F
+ */
+
+:root,
+:root[data-theme="classic-green"] {
+    /* Primary Colors  (base #2e7d32 = rgb 46,125,50, foliage green) */
+    --primary-color: #14735F;
+    --primary-dark:  #0f5546;   /* darker shade of #14735F for hover / gradient end */
+    --primary-light: #E6CE00;
+    --primary-50:  rgba(20, 115, 95, 0.05);
+    --primary-100: rgba(20, 115, 95, 0.10);
+    --primary-200: rgba(20, 115, 95, 0.20);
+    --primary-300: rgba(20, 115, 95, 0.30);
+    --primary-500: rgba(20, 115, 95, 0.50);
+    --primary-750: rgba(20, 115, 95, 0.75);
+
+    /* Secondary Colors  (warm grey-green, low chroma) */
+    --secondary-color: #5f6b5a;
+    --secondary-dark:  #454f41;
+    --secondary-light: #8b968a;
+
+    /* Accent Colors */
+    --success-color: #43a047;
+    --info-color:    #0f766e;   /* deep teal, distinct from primary */
+    --warning-color: #E6CE00;   /* earthy amber */
+    --danger-color:  #d84343;
+
+    /* Background Colors */
+    --light-bg: #f3f8f2;        /* barely-there green tint */
+    --dark-bg:  #1c2b1e;        /* dark forest */
+    --card-bg:  #ffffff;
+
+    /* Text Colors */
+    --text-primary:   #1f2a1f;
+    --text-secondary: #5b6652;
+    --text-muted:     #8b968a;
+    --text-white:     #ffffff;
+
+    /* Border Colors */
+    --border-light:  rgba(27, 94, 32, 0.06);
+    --border-medium: rgba(27, 94, 32, 0.12);
+    --border-strong: rgba(27, 94, 32, 0.22);
+
+    /* Shadow Colors */
+    --shadow-sm: 0 4px 15px rgba(20, 115, 95, 0.10);
+    --shadow-md: 0 8px 30px rgba(20, 115, 95, 0.15);
+    --shadow-lg: 0 20px 40px rgba(20, 115, 95, 0.15);
+
+    /* Gradient */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    --gradient-overlay: rgba(20, 115, 95, 0.75);
+}
+
+/* -------------------------------------------------------------------------
+ * Overrides for rules in custom.css that hard-code the blue theme colours
+ * instead of using the variables above. Scoped to [data-theme="classic-green"]
+ * so the other themes are untouched.
+ * ---------------------------------------------------------------------- */
+[data-theme="classic-green"] .hero-section,
+[data-theme="classic-green"] .species-header,
+[data-theme="classic-green"] .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+}
+
+[data-theme="classic-green"] .hero-with-bg::before {
+    background: #14735F;
+}
+
+[data-theme="classic-green"] .feature-icon {
+    background: rgba(20, 115, 95, 0.10);
+}
+
+[data-theme="classic-green"] .btn:focus,
+[data-theme="classic-green"] .nav-link:focus {
+    outline: 3px solid rgba(20, 115, 95, 0.50);
+}
+
+/* -------------------------------------------------------------------------
+ * Tab pills (species page: Info / Genome Browser / Data Dashboard /
+ * Sequence Search) -> gold (#E6CE00 = rgb 230,206,0). The active pill is
+ * solid gold and needs DARK text; inactive pills are a light gold wash.
+ * Higher specificity than the template's inline .nav-pills rules, so it
+ * wins even though the inline <style> loads afterwards.
+ * ---------------------------------------------------------------------- */
+[data-theme="classic-green"] .nav-pills .nav-link,
+[data-theme="classic-green"] .nav-pills .nav-link:hover,
+[data-theme="classic-green"] .nav-pills .nav-link.active {
+    /* base.css sets .nav-link colour with !important, so match it here */
+    color: #000000 !important;
+}
+[data-theme="classic-green"] .nav-pills .nav-link .text-muted {
+    color: #000000 !important;
+    opacity: 0.7;
+}
+[data-theme="classic-green"] .nav-pills .nav-link {
+    background: rgba(230, 206, 0, 0.30);
+}
+[data-theme="classic-green"] .nav-pills .nav-link:hover {
+    background: rgba(230, 206, 0, 0.55);
+    border-color: rgba(230, 206, 0, 0.35);
+}
+[data-theme="classic-green"] .nav-pills .nav-link.active {
+    background: #ebd406c4;
+    border-color: #E6CE00;
+}
+
+/* -------------------------------------------------------------------------
+ * Action buttons -> green (#14735F). Covers the species-page buttons:
+ * JBrowse (primary), Dashboard (success), BLAST (info) + their outlines.
+ * ---------------------------------------------------------------------- */
+[data-theme="classic-green"] .btn-primary,
+[data-theme="classic-green"] .btn-success,
+[data-theme="classic-green"] .btn-info {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #14735f;
+    --bs-btn-border-color: #14735f;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #0f5546;
+    --bs-btn-hover-border-color: #0d4c3e;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #0d4c3e;
+    --bs-btn-active-border-color: #0b4438;
+    --bs-btn-disabled-color: #ffffff;
+    --bs-btn-disabled-bg: #14735f;
+    --bs-btn-disabled-border-color: #14735f;
+    --bs-btn-focus-shadow-rgb: 20, 115, 95;
+    color: var(--bs-btn-color);
+    background-color: var(--bs-btn-bg);
+    border-color: var(--bs-btn-border-color);
+    box-shadow: 0 4px 12px rgba(20, 115, 95, 0.30);
+}
+[data-theme="classic-green"] .btn-primary:hover,
+[data-theme="classic-green"] .btn-primary:focus-visible,
+[data-theme="classic-green"] .btn-primary:active,
+[data-theme="classic-green"] .btn-success:hover,
+[data-theme="classic-green"] .btn-success:focus-visible,
+[data-theme="classic-green"] .btn-success:active,
+[data-theme="classic-green"] .btn-info:hover,
+[data-theme="classic-green"] .btn-info:focus-visible,
+[data-theme="classic-green"] .btn-info:active {
+    color: #ffffff;
+    background-color: #0f5546;
+    border-color: #0d4c3e;
+    box-shadow: 0 8px 20px rgba(20, 115, 95, 0.40);
+}
+
+[data-theme="classic-green"] .btn-outline-primary,
+[data-theme="classic-green"] .btn-outline-success,
+[data-theme="classic-green"] .btn-outline-info {
+    --bs-btn-color: #14735f;
+    --bs-btn-border-color: #14735f;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #14735f;
+    --bs-btn-hover-border-color: #14735f;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #14735f;
+    --bs-btn-active-border-color: #14735f;
+    --bs-btn-focus-shadow-rgb: 20, 115, 95;
+}

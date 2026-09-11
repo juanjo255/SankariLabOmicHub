@@ -49,3 +49,8 @@ id_formats = ["ENSBTAG.*"]  # Same as bos (Bos taurus)
 adapter_type = "gene_id"
 id_formats = ["^[0-9]+$"]
 primary_key = "ENS"
+
+[species.smeliloti]
+adapter_type = "gene_id"
+id_formats = ["^FDIBAINBAK_[0-9]+$"]
+primary_key = "ENS"

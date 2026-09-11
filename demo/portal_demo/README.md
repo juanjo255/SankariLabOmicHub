@@ -18,9 +18,13 @@ This demo package contains:
 ## Download
 
 - file: `portal_demo.tar.gz`
-- ScienceDB record: `https://doi.org/10.57760/sciencedb.41502`
+- url: `https://tulab.genetics.ac.cn/~qtu/miniodp/portal_demo.tar.gz`
 - size: `1.7G`
-- SHA256: `85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c`
+- SHA256: `52dc9d37768a8baafbcb1bed3228913df7dba4ebfa9a4a9f5c9037553c60413b`
+
+The checksum list is published at:
+
+- `https://tulab.genetics.ac.cn/~qtu/miniodp/SHA256SUMS.txt`
 
 ## Layout
 
@@ -75,41 +79,10 @@ Use this subset to validate:
 
 To test against the current repository:
 
-1. Download and verify the package from the repository root:
-
-```bash
-echo "85f5d2502744bc740602aeaecc3e0d9b5665c080fa5bab923d549107377d223c  portal_demo.tar.gz" | sha256sum -c -
-tar -xzf portal_demo.tar.gz -C demo
-```
-
-Download `portal_demo.tar.gz` from the ScienceDB record before running the commands above:
-
-- [10.57760/sciencedb.41502](https://doi.org/10.57760/sciencedb.41502)
-
-2. For a local Dash test without copying data into the repository:
-
-```bash
-cd dash
-DASH_DATA_PATH=../demo/portal_demo/dash/data python app.py
-```
-
-3. To use Docker Compose, copy or sync the demo Dash data into `dash/data/`
-   because the compose file mounts that directory into the container.
-
-4. To build a single-species Hugo demo, copy the demo
-   `species_display.toml` over `hugo/data/species_display.toml` in a temporary
-   working tree, then build with:
-
-```bash
-cd hugo
-hugo --config config/hugo_default.toml --baseURL http://localhost:1313/miniodp/
-```
-
-5. Copy `demo/portal_demo/sequenceserver/data/` into `sequenceserver/data/`
-   before starting SequenceServer.
-
-6. If you want to test the repository JBrowse helper script directly against
-   the demo bundle, run:
+1. Point Dash to `demo/portal_demo/dash/data/`, or copy the subset into a clean runtime data root.
+2. Replace the Hugo species display config with `demo/portal_demo/hugo/data/species_display.toml` when building a single-species demo.
+3. Copy `demo/portal_demo/jbrowse2/data/Danio_rerio/` into the JBrowse 2 app data directory before registering the assembly and tracks.
+4. If you want to test the repository helper script directly against the demo bundle, run:
 
 ```bash
 python jbrowse2/scripts/generate_loader.py Danio_rerio \
@@ -118,3 +91,4 @@ python jbrowse2/scripts/generate_loader.py Danio_rerio \
 ```
 
 This command is for repository-local validation. On a deployed JBrowse 2 host, keep using the real app and data roots.
+5. Copy `demo/portal_demo/sequenceserver/data/` into `sequenceserver/data/` before starting SequenceServer.
