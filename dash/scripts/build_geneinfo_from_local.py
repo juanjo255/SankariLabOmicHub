@@ -244,7 +244,8 @@ class LocalGeneinfoBuilder:
                 chrom, _source, feature, start, end, _score, strand_symbol, _phase, attrs_raw = parts
                 attrs = parse_attributes(attrs_raw)
                 gene_id = (
-                    attrs.get("gene_id")
+                    attrs.get("locus_tag")
+                    or attrs.get("gene_id")
                     or attrs.get("gene")
                     or attrs.get("ID")
                 )
