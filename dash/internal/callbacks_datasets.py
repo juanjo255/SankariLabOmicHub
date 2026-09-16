@@ -65,7 +65,7 @@ def register(app, *, logger: logging.Logger) -> None:
             [
                 html.H4("Data Sources", className="mb-3"),
                 html.P(
-                    "Curated bulk datasets processed against the reference genome. "
+                    "Omics datasets produced and/or processed at Sankari Lab."
                     "Use the filter row below the headers to search, click a header to sort.",
                     className="text-muted",
                 ),

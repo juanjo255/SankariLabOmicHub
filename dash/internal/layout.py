@@ -155,7 +155,7 @@ def create_main_content():
         [
             dcc.Tabs(
                 id="main-tabs",
-                value="tab-summary",
+                value="tab-data-sources",
                 className="custom-tabs",
                 children=[
                     dcc.Tab(
