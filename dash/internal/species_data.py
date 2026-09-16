@@ -38,6 +38,7 @@ def validate_species_data(species_key: str) -> Dict[str, Any]:
         "scRNA": "Single-cell RNA data",
         "scATAC": "Single-cell ATAC data",
         "BulkMulti": "Bulk multi-omics analysis data",
+        "Datasets": "Curated dataset manifest",
     }
 
     validation_results: Dict[str, Any] = {

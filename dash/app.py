@@ -13,6 +13,7 @@ from dash import Input, Output
 from internal.callbacks_bulk_rna import register as register_bulk_rna_callbacks
 from internal.callbacks_bulkmulti import register as register_bulkmulti_callbacks
 from internal.callbacks_contextual_controls import register as register_contextual_controls_callbacks
+from internal.callbacks_datasets import register as register_datasets_callbacks
 from internal.callbacks_gene import register as register_gene_callbacks
 from internal.callbacks_gene_summary import register as register_gene_summary_callbacks
 from internal.callbacks_routing import register as register_routing_callbacks
@@ -69,6 +70,7 @@ register_bulk_rna_callbacks(app, logger=logger)
 register_bulkmulti_callbacks(app, logger=logger)
 register_scrna_callbacks(app, logger=logger)
 register_scatac_callbacks(app, logger=logger)
+register_datasets_callbacks(app, logger=logger)
 
 @app.callback(Output("tab-content", "children"), Input("main-tabs", "value"))
 def update_tab_content(active_tab):

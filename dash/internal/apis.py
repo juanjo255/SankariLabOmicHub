@@ -6,6 +6,7 @@ from threading import Lock
 from typing import Any, Dict, Optional
 
 from backend.bulk_multi_api import BulkMultiAPI
+from backend.datasets_api import DatasetsAPI
 from backend.expression_api import ExpressionAPI
 from backend.gene_search import GeneSearchAPI
 from backend.landscape_view_api import LandscapeViewAPI
@@ -82,6 +83,9 @@ def initialize_apis(species_key: str, dataset: Optional[str] = None) -> Optional
         if "Bulk multi-omics analysis data" in validation["available_features"]:
             apis["bulk_multi_api"] = BulkMultiAPI(species_key=species_key, dataset=normalized_dataset)
             apis["landscape_view_api"] = LandscapeViewAPI(species_key=species_key, dataset=normalized_dataset)
+
+        if "Curated dataset manifest" in validation["available_features"]:
+            apis["datasets_api"] = DatasetsAPI(species_key=species_key)
 
         logger.info(f"✅ APIs initialized successfully for species: {species_key}")
         logger.info(f"  Loaded APIs: {', '.join(apis.keys())}")
@@ -161,6 +165,10 @@ def get_gene_search_api(species_key: Optional[str], dataset: Optional[str] = Non
 
 def get_expression_api(species_key: Optional[str], dataset: Optional[str] = None):
     return get_api_for_species(species_key, "expression_api", dataset)
+
+
+def get_datasets_api(species_key: Optional[str], dataset: Optional[str] = None):
+    return get_api_for_species(species_key, "datasets_api", dataset)
 
 
 def get_scrna_api(species_key: Optional[str], dataset: Optional[str] = None):

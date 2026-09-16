@@ -246,14 +246,15 @@ class LocalGeneinfoBuilder:
                 gene_id = (
                     attrs.get("locus_tag")
                     or attrs.get("gene_id")
-                    or attrs.get("gene")
+                    # or attrs.get("gene")
                     or attrs.get("ID")
                 )
                 if not gene_id:
                     continue
 
                 gene_name = (
-                    attrs.get("gene_name")
+                    attrs.get("gene")
+                    or attrs.get("gene_name")
                     or attrs.get("Name")
                     or attrs.get("gene_symbol")
                     or gene_id

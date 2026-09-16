@@ -165,6 +165,7 @@ def create_main_content():
                         selected_className="custom-tab-selected",
                     )
                     for name, val in [
+                        ("Data Sources", "tab-data-sources"),
                         ("GeneInfo", "tab-summary"),
                         ("BulkRNA", "tab-bulk-rna"),
                         ("scRNA", "tab-scrna"),
@@ -183,6 +184,8 @@ def create_main_content():
 def create_tab_content(tab_id):
     if tab_id == "tab-summary":
         return html.Div([dbc.Spinner(html.Div(id="gene-summary-content"))])
+    if tab_id == "tab-data-sources":
+        return html.Div([dbc.Spinner(html.Div(id="datasets-content"))])
     if tab_id == "tab-bulk-rna":
         return html.Div([dbc.Spinner(html.Div(id="bulk-rna-content"))])
     if tab_id == "tab-scrna":

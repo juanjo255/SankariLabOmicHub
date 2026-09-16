@@ -1,0 +1,15 @@
+run,year,data_type,condition,replicates,description
+MOLNG-4360,2025,Bulk RNA-seq,untreated,3,"WT S. meliloti (B02 assembly), untreated control"
+MOLNG-4360,2025,Bulk RNA-seq,NCR086,3,WT B02 treated with NCR086
+MOLNG-4360,2025,Bulk RNA-seq,NCR169,3,WT B02 treated with NCR169
+MOLNG-4360,2025,Bulk RNA-seq,NCR211,3,WT B02 treated with NCR211
+MOLNG-4360,2025,Bulk RNA-seq,NCR247,3,WT B02 treated with NCR247
+MOLNG-4360,2025,Bulk RNA-seq,NCR247+NCR086,3,WT B02 treated with combined NCR247 and NCR086
+MOLNG-4360,2025,Bulk RNA-seq,NCR247+NCR169,3,WT B02 treated with combined NCR247 and NCR169
+MOLNG-4360,2025,Bulk RNA-seq,NCR247+NCR211,3,WT B02 treated with combined NCR247 and NCR211
+MOLNG-4360,2025,Bulk RNA-seq,NCR247+NCR211+NCR169,3,"WT B02 treated with combined NCR247, NCR211, and NCR169"
+SRP028599,2014,"Bulk RNA-seq (bacteroid, LCM)",Zone I (meristem),3,"Bacteroid transcriptome from laser-capture microdissected M. truncatula nodule Zone I (Roux et al., Plant Cell 2014; dual plant-bacterial RNA-seq)"
+SRP028599,2014,"Bulk RNA-seq (bacteroid, LCM)",Zone II distal (infection zone),3,"Bacteroid transcriptome from laser-capture microdissected M. truncatula nodule Zone II distal (Roux et al., Plant Cell 2014; dual plant-bacterial RNA-seq)"
+SRP028599,2014,"Bulk RNA-seq (bacteroid, LCM)",Zone II proximal,3,"Bacteroid transcriptome from laser-capture microdissected M. truncatula nodule Zone II proximal (Roux et al., Plant Cell 2014; dual plant-bacterial RNA-seq)"
+SRP028599,2014,"Bulk RNA-seq (bacteroid, LCM)",Interzone II-III,3,"Bacteroid transcriptome from laser-capture microdissected M. truncatula nodule interzone II-III (Roux et al., Plant Cell 2014; dual plant-bacterial RNA-seq)"
+SRP028599,2014,"Bulk RNA-seq (bacteroid, LCM)",Zone III (nitrogen fixation zone),3,"Bacteroid transcriptome from laser-capture microdissected M. truncatula nodule Zone III (Roux et al., Plant Cell 2014; dual plant-bacterial RNA-seq)"

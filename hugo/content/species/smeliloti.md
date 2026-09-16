@@ -45,3 +45,24 @@ states of *S. meliloti*.
 
 Curated bulk and single-cell datasets for *S. meliloti* will be listed here as
 they are processed against the RM1021 reference.
+
+##### Bulk data
+
+| Run | Data Type | Condition | Replicates | Description |
+| --- | --------- | --------- | ---------- | ------------ |
+| MOLNG-4360 | Bulk RNA-seq | untreated | 3 | WT *S. meliloti* (B02 assembly), untreated control |
+| MOLNG-4360 | Bulk RNA-seq | NCR086 | 3 | WT B02 treated with NCR086 |
+| MOLNG-4360 | Bulk RNA-seq | NCR169 | 3 | WT B02 treated with NCR169 |
+| MOLNG-4360 | Bulk RNA-seq | NCR211 | 3 | WT B02 treated with NCR211 |
+| MOLNG-4360 | Bulk RNA-seq | NCR247 | 3 | WT B02 treated with NCR247 |
+| MOLNG-4360 | Bulk RNA-seq | NCR247+NCR086 | 3 | WT B02 treated with combined NCR247 and NCR086 |
+| MOLNG-4360 | Bulk RNA-seq | NCR247+NCR169 | 3 | WT B02 treated with combined NCR247 and NCR169 |
+| MOLNG-4360 | Bulk RNA-seq | NCR247+NCR211 | 3 | WT B02 treated with combined NCR247 and NCR211 |
+| MOLNG-4360 | Bulk RNA-seq | NCR247+NCR211+NCR169 | 3 | WT B02 treated with combined NCR247, NCR211, and NCR169 |
+
+NCR (Nodule-specific Cysteine-Rich) peptides are host (*Medicago truncatula*)
+produced signals that drive terminal bacteroid differentiation during
+symbiosis. This unpublished, in-house panel (Sankari Lab, Stowers Genomics
+Core) treats free-living WT cells with individual and combined NCR peptides
+to dissect their effect on the free-living-to-bacteroid transcriptional
+program.

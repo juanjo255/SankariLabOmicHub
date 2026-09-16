@@ -7,9 +7,15 @@
 # Each app's README documents these as "populated externally", never committed.
 # -----------------------------------------------------------------------------
 # Dash: converted per-species databases (geneinfo.db, bulkRNA/scRNA/scATAC
-# parquet, BulkMulti) - keep species_adapters.toml, the one config file here.
+# parquet, BulkMulti) - keep species_adapters.toml, the one config file here,
+# and each species' Datasets/*.csv manifest (hand-curated source, not generated).
 dash/data/*
 !dash/data/species_adapters.toml
+!dash/data/*/
+dash/data/*/*
+!dash/data/*/Datasets/
+dash/data/*/Datasets/*
+!dash/data/*/Datasets/*.csv
 dash/logs/
 dash/cache/
 
