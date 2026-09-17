@@ -102,10 +102,21 @@ def parse_args() -> argparse.Namespace:
         help="Download or copy managed FASTA files into the data directory.",
         parents=[common_parser],
     )
-    subparsers.add_parser(
+    build_parser = subparsers.add_parser(
         "build",
         help="Run makeblastdb for FASTA files present in the data directory.",
         parents=[common_parser],
+    )
+    build_parser.add_argument(
+        "--makeblastdb-bin",
+        type=Path,
+        default=None,
+        help=(
+            "Path to a local makeblastdb binary. When set, runs makeblastdb "
+            "directly instead of through Docker. Useful on hosts where the "
+            "Docker/Podman image cannot be pulled (for example, rootless "
+            "Podman with overlay storage on an NFS home directory)."
+        ),
     )
     return parser.parse_args()
 
@@ -242,7 +253,13 @@ def remove_existing_indexes(fasta_path: Path, *, dry_run: bool) -> None:
             index_path.unlink()
 
 
-def build_records(records: list[BlastRecord], *, data_dir: Path, dry_run: bool) -> None:
+def build_records(
+    records: list[BlastRecord],
+    *,
+    data_dir: Path,
+    dry_run: bool,
+    makeblastdb_bin: Path | None = None,
+) -> None:
     uid_gid = f"{os.getuid()}:{os.getgid()}"
     for record in records:
         fasta_path = data_dir / record.file_name
@@ -251,34 +268,52 @@ def build_records(records: list[BlastRecord], *, data_dir: Path, dry_run: bool) 
             continue
 
         remove_existing_indexes(fasta_path, dry_run=dry_run)
-        cmd = [
-            "docker",
-            "run",
-            "--rm",
-            "-v",
-            f"{data_dir.resolve()}:/db",
-            "-u",
-            uid_gid,
-            "--entrypoint",
-            "makeblastdb",
-            DOCKER_IMAGE,
-            "-in",
-            f"/db/{record.file_name}",
-            "-dbtype",
-            record.dbtype,
-            "-title",
-            record.database_title,
-            "-taxid",
-            str(record.taxid),
-        ]
-        if record.parse_seqids:
-            cmd.append("-parse_seqids")
-        cmd.extend(
-            [
-                "-out",
-                f"/db/{record.file_name}",
+
+        if makeblastdb_bin is not None:
+            cmd = [
+                str(makeblastdb_bin),
+                "-in",
+                str(fasta_path),
+                "-dbtype",
+                record.dbtype,
+                "-title",
+                record.database_title,
+                "-taxid",
+                str(record.taxid),
             ]
-        )
+            if record.parse_seqids:
+                cmd.append("-parse_seqids")
+            cmd.extend(["-out", str(fasta_path)])
+        else:
+            cmd = [
+                "docker",
+                "run",
+                "--rm",
+                "-v",
+                f"{data_dir.resolve()}:/db",
+                "-u",
+                uid_gid,
+                "--entrypoint",
+                "makeblastdb",
+                DOCKER_IMAGE,
+                "-in",
+                f"/db/{record.file_name}",
+                "-dbtype",
+                record.dbtype,
+                "-title",
+                record.database_title,
+                "-taxid",
+                str(record.taxid),
+            ]
+            if record.parse_seqids:
+                cmd.append("-parse_seqids")
+            cmd.extend(
+                [
+                    "-out",
+                    f"/db/{record.file_name}",
+                ]
+            )
+
         print("$ " + " ".join(cmd))
         if not dry_run:
             subprocess.run(cmd, check=True)
@@ -322,7 +357,12 @@ def main() -> int:
         )
         return 0
     if args.command == "build":
-        build_records(records, data_dir=data_dir, dry_run=args.dry_run)
+        build_records(
+            records,
+            data_dir=data_dir,
+            dry_run=args.dry_run,
+            makeblastdb_bin=args.makeblastdb_bin,
+        )
         return 0
     raise ValueError(f"Unsupported command: {args.command}")
 

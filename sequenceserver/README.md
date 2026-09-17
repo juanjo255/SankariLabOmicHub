@@ -37,6 +37,15 @@ python3 scripts/manage_blastdb.py materialize --species zebrafish --species meda
 bash scripts/build_all_blastdbs.sh
 ```
 
+The build step normally runs `makeblastdb` inside the `wurmlab/sequenceserver`
+Docker image. On hosts where that image cannot be pulled (for example,
+rootless Podman with overlay storage on an NFS home directory), pass a local
+`makeblastdb` binary to skip the container entirely:
+
+```bash
+bash scripts/build_all_blastdbs.sh --makeblastdb-bin /path/to/makeblastdb
+```
+
 The build step skips FASTA files that are not present in `sequenceserver/data/`.
 Unmanaged entries, such as locally prepared genome bundles, can be copied into
 `sequenceserver/data/` manually before running the build step.
